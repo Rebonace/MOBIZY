@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default function LoggingPage() {
+export default function LogingPage() {
   const [formValue, setFormValue] = useState({});
 
   const handleSubmit = async () => {
