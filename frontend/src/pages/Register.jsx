@@ -1,15 +1,12 @@
-import Header from "@components/Header";
+import Form from "./Form";
 
 function Register() {
   return (
-    <>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <h2> Hello this is the Register Page (sign up)</h2>
-      </div>
-    </>
+    <div>
+      <h2>
+        <Form />
+      </h2>
+    </div>
   );
 }
 

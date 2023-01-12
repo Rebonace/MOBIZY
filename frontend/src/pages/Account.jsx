@@ -1,11 +1,5 @@
-import Header from "@components/Header";
-
 function Account() {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div>hello</div>;
 }
 
 export default Account;
