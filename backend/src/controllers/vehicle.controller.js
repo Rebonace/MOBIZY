@@ -21,6 +21,11 @@ async function get(req, res) {
   res.json(vehicle);
 }
 
+async function listWithFilters(req, res) {
+  const vehicles = await vehicleModel.getAllWithFilters(req.body);
+  res.json(vehicles);
+}
+
 async function deleteOne(req, res) {
   const vehicle = await vehicleModel.deleteVehicle(req.params.vehicleId);
 
@@ -44,6 +49,7 @@ async function modify(req, res) {
 module.exports = {
   list,
   get,
+  listWithFilters,
   deleteOne,
   modify,
 };
