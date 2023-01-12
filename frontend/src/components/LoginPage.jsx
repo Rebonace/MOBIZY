@@ -24,7 +24,7 @@ export default function LogingPage() {
       <form className="login-form">
         <TextField
           onChange={(e) => handleChange(e)}
-          helperText="Please enter your username"
+          helperText="Please enter your email"
           id="demo-helper-text-aligned"
           label="Email"
           type="email"
@@ -45,7 +45,7 @@ export default function LogingPage() {
           variant="contained"
           type="submit"
         >
-          Contained
+          LOGIN
         </Button>
       </form>
     </div>
