@@ -1,11 +1,11 @@
-import LogIn from "./pages/LogIn";
+import DatePicker from "./pages/DatePicker";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <LogIn />
+      <DatePicker />
     </div>
   );
 }
