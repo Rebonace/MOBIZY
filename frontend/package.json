@@ -31,7 +31,8 @@
     "styled-components": "^5.3.6",
     "tw-elements": "^1.0.0-alpha13",
     "template-fullstack": "file:..",
-    "date-fns": "^2.16.1"
+    "date-fns": "^2.16.1",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
