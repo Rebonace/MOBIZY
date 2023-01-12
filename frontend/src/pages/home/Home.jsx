@@ -1,10 +1,9 @@
-import Header from "@components/Header";
-import "../../services/style/Home.css";
+import "./Home.css";
+import HomeForm from "./HomeForm";
 
 function Home() {
   return (
     <div className="home">
-      <Header />
       <div className="home-title-container">
         <h1 className="home-title">
           Rent a suitable car and rent it as long as you want
@@ -15,6 +14,7 @@ function Home() {
           alt="logo-title"
         />
       </div>
+      <HomeForm />
     </div>
   );
 }
