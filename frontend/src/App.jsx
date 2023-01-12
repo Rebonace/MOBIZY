@@ -7,12 +7,14 @@ import Register from "@pages/Register";
 import Account from "@pages/Account";
 import Cart from "@pages/Cart";
 import Admin from "@pages/Admin";
+import Header from "@components/Header";
 import LogIn from "./pages/LogIn";
 import Home from "./pages/home/Home";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />

@@ -1,19 +1,54 @@
 import React from "react";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+
+import "./RegisterIndividual.css";
 
 // eslint-disable-next-line react/prop-types
 function RegisterIndividual({ handleChange, formValue }) {
   const info = [
-    { type: "text", name: "firstname", placeholder: "First Name" },
-    { type: "text", name: "lastname", placeholder: "Last Name" },
-    { type: "text", name: "licence", placeholder: "Licence" },
-    { type: "text", name: "description", placeholder: "Description" },
-    { type: "email", name: "email", placeholder: "Email Address" },
-    { type: "password", name: "password", placeholder: "Password" },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "First Name",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "Last Name",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "Licence",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "Description",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "email",
+      helperText: "* required",
+      label: "Email Address",
+      id: "demo-helper-text-aligned",
+    },
     {
       type: "password",
-      name: "confirmPassword",
-      placeholder: "Confirm Password",
+      helperText: "* required",
+      label: "Password",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "password",
+      helperText: "* required",
+      label: "Confirm Password",
+      id: "demo-helper-text-aligned",
     },
   ];
 
@@ -23,31 +58,28 @@ function RegisterIndividual({ handleChange, formValue }) {
 
   return (
     <div>
-      <h2>Individual</h2>
-
-      <form>
-        <h1>Hello !</h1>
+      <h2>Hello User! Create your profile</h2>
+      <form className="individual-form">
         {info.map((element) => (
-          <div>
-            <input
-              onChange={handleChange}
-              type={element.type}
-              name={element.name}
-              key={element.name}
-              placeholder={element.placeholder}
-            />
-          </div>
+          <TextField
+            onChange={handleChange}
+            type={element.type}
+            helperText={element.helperText}
+            key={element.name}
+            label={element.label}
+          />
         ))}
-        <button
+        <Button
           onClick={(event) => {
             event.preventDefault();
             handleSubmit();
           }}
           type="submit"
+          variant="contained"
         >
           Login
-        </button>
-        <span>Forgot Password ?</span>
+        </Button>
+        <Button>Forgot Password ?</Button>
       </form>
     </div>
   );

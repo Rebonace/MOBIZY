@@ -1,17 +1,40 @@
 import React from "react";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import "./RegisterCompagny.css";
 
 // eslint-disable-next-line react/prop-types
 function RegisterCompany({ handleChange, formValue }) {
   const info = [
-    { type: "text", name: "name", placeholder: "Name" },
-    { type: "email", name: "email", placeholder: "Email Address" },
-    { type: "text", name: "description", placeholder: "Description" },
-    { type: "password", name: "password", placeholder: "Password" },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "Company Name",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "email",
+      helperText: "* required",
+      label: "Email Address",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "text",
+      helperText: "* required",
+      label: "Description",
+      id: "demo-helper-text-aligned",
+    },
     {
       type: "password",
-      name: "confirmPassword",
-      placeholder: "Confirm Password",
+      helperText: "* required",
+      label: "Password",
+      id: "demo-helper-text-aligned",
+    },
+    {
+      type: "password",
+      helperText: "* required",
+      label: "Confirm Password",
     },
   ];
 
@@ -21,30 +44,31 @@ function RegisterCompany({ handleChange, formValue }) {
 
   return (
     <div>
-      <h2>Company</h2>
-      <form>
-        <h1>Hello !</h1>
+      <h2>Register your Company</h2>
+      <form className="company-form">
         {info.map((element) => (
           <div>
-            <input
+            <TextField
               onChange={(e) => handleChange(e)}
+              id={element.id}
+              helperText={element.helperText}
               type={element.type}
-              name={element.name}
               key={element.name}
-              placeholder={element.placeholder}
+              label={element.label}
             />
           </div>
         ))}
-        <button
+        <Button
           onClick={(event) => {
             event.preventDefault();
             handleSubmit();
           }}
           type="submit"
+          variant="contained"
         >
           Login
-        </button>
-        <span>Forgot Password ?</span>
+        </Button>
+        <Button>Forgot Password ?</Button>
       </form>
     </div>
   );
