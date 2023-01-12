@@ -1,10 +1,11 @@
 import Header from "@components/Header";
+import LogingPage from "../components/LoginPage";
 
-function Login() {
+export default function LogIn() {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <LogingPage />
+    </>
   );
 }
-export default Login;

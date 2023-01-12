@@ -23,12 +23,14 @@
     "flowbite-datepicker": "^1.2.2",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
-    "react": "^18.0.0",
     "react-calendar": "^4.0.0",
-    "react-dom": "^18.0.0",
     "react-router-dom": "^6.6.2",
     "styled-components": "^5.3.6",
-    "tw-elements": "^1.0.0-alpha13"
+    "tw-elements": "^1.0.0-alpha13",
+    "axios": "^1.2.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "template-fullstack": "file:.."
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
