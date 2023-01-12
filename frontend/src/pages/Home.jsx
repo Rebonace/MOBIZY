@@ -1,3 +1,5 @@
+import LogIn from "./LogIn";
+
 export default function Home() {
-  return <h1>lala</h1>;
+  return <LogIn />;
 }

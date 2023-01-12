@@ -7,9 +7,8 @@ companyRouter.get(
   "/:companyId/vehicles",
   companyController.listVehicleFromCompany
 );
-// companyRouter.get("/:id", companyController.get);
 
-// companyRouter.post("/", companyController.create);
+companyRouter.post("/:companyId/create", companyController.createNewVehicle);
 
 module.exports = {
   companyRouter,

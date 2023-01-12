@@ -26,8 +26,30 @@ async function listWithFilters(req, res) {
   res.json(vehicles);
 }
 
+async function deleteOne(req, res) {
+  const vehicle = await vehicleModel.deleteVehicle(req.params.vehicleId);
+
+  if (!vehicle) {
+    res.status(404).send("vehicle not found in database");
+  }
+
+  res.status(201).send("Vehicle deleted from database");
+}
+
+async function modify(req, res) {
+  const vehicle = await vehicleModel.updateVehicle(req.params.vehicleId);
+
+  if (!vehicle) {
+    res.status(404).send("vehicle not found in database");
+  }
+
+  res.status(201).send("Vehicle deleted from database");
+}
+
 module.exports = {
   list,
   get,
   listWithFilters,
+  deleteOne,
+  modify,
 };
