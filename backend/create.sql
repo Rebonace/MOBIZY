@@ -81,4 +81,25 @@ CREATE TABLE `reservation` (
   CONSTRAINT `fk_reservation_vehicle` FOREIGN KEY (`vehicle_id`) REFERENCES `user` (`id`)
 ); 
 
-INSERT INTO reservation (start_date, end_date, user_id, vehicle_id) VALUES ("2021-02-15 9:55:12", "2021-02-17 9:55:12", 1, 1), ("2022-02-15 9:55:12", "2022-02-17 9:55:12", 1, 2), ("2022-02-15 9:55:12", "2022-02-17 9:55:12", 2, 1);
+CREATE TABLE `availibility` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `start_date_1` datetime NOT NULL,
+  `end_date_1` datetime NOT NULL,
+  `start_date_2` datetime NOT NULL,
+  `end_date_2` datetime NOT NULL,
+  `vehicle_id_a` int NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_availibility_vehicle` FOREIGN KEY (`vehicle_id_a`) REFERENCES `user` (`id`)
+); 
+
+CREATE TRIGGER availibility_vehicles 
+AFTER INSERT 
+ON reservation
+FOR EACH ROW
+INSERT INTO availibility (start_date_1, end_date_1, start_date_2, end_date_2, vehicle_id_a) 
+VALUES (NOW(), NEW.start_date, NEW.end_date, NOW() + INTERVAL 90 DAY, NEW.vehicle_id);
+
+INSERT INTO reservation (start_date, end_date, user_id, vehicle_id) 
+VALUES (NOW()+ INTERVAL 1 DAY, NOW()+ INTERVAL 3 DAY, 1, 1), 
+(NOW()+ INTERVAL 2 DAY, NOW()+ INTERVAL 16 DAY, 1, 2), 
+(NOW()+ INTERVAL 18 DAY, NOW()+ INTERVAL 20 DAY, 2, 1);

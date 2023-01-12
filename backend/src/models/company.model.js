@@ -1,9 +1,10 @@
-const { db } = require("./db");
+const database = require("./db");
 
 async function getAllVehiclesFromCompany(companyId) {
-  const [rows] = await db.query("SELECT * FROM vehicle WHERE company_id = ?", [
-    companyId,
-  ]);
+  const [rows] = await database.query(
+    "SELECT * FROM vehicle WHERE company_id = ?",
+    [companyId]
+  );
 
   return [rows];
 }
@@ -34,7 +35,7 @@ async function insertNewVehicle(vehicle, companyId) {
     // eslint-disable-next-line camelcase
   } = vehicle;
 
-  const [result] = await db.query(
+  const [result] = await database.query(
     "INSERT INTO vehicle ( brand, model, photo_path, description, date_of_purchase, fuel, kilometers, location, nbr_seats, gearbox, is_ramp, is_sonar, is_sphere,  daily_price, company_id) VALUES ( ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?)",
     [
       brand,
