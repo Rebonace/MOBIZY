@@ -37,7 +37,7 @@ function Header(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        MOBIBY
       </Typography>
       <Divider />
       <List>
@@ -74,7 +74,13 @@ function Header(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <Link to="/">MOBIZY</Link>
+            <Link to="/">
+              <img
+                className="logo-mobiby"
+                src="../../public/logoMobiby.png"
+                alt="logo"
+              />
+            </Link>
           </Typography>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>

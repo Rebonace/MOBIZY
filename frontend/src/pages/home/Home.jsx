@@ -6,7 +6,7 @@ function Home() {
     <div className="home">
       <div className="home-title-container">
         <h1 className="home-title">
-          Rent a suitable car and rent it as long as you want
+          Find a suitable car and rent it as long as you want
         </h1>
         <img
           className="home-title-logo"
