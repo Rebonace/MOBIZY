@@ -18,32 +18,16 @@ async function getOne(vehicleId) {
   return rows[0];
 }
 
-// async function insertOne({ companyId, content }) {
-//   const {
-//     model,
-//     brand,
-//     description,
-//     date_of_purchase,
-//     fuel,
-//     kilometers,
-//     location,
-//     nbr_seats,
-//     is_ramp,
-//     is_sonar,
-//     is_sphere,
-//     gearbox,
-//     daily_price,
-//     company_id,
-//   } = content;
-//   const [result] = await db.query(
-//     "INSERT INTO comment (creation_date, content, user_id, idea_id) VALUES (NOW(), ?, ?, ?)",
-//     [content, companyId]
-//   );
+async function deleteVehicle(vehicleId) {
+  const [rows] = await db.query("DELETE FROM vehicle WHERE id = ?", [
+    vehicleId,
+  ]);
 
-//   return result.insertId;
-// }
+  return [rows];
+}
 
 module.exports = {
   getAll,
   getOne,
+  deleteVehicle,
 };
