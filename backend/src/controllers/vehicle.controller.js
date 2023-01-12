@@ -21,7 +21,13 @@ async function get(req, res) {
   res.json(vehicle);
 }
 
+async function listWithFilters(req, res) {
+  const vehicles = await vehicleModel.getAllWithFilters(req.body);
+  res.json(vehicles);
+}
+
 module.exports = {
   list,
   get,
+  listWithFilters,
 };
