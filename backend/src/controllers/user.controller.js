@@ -1,4 +1,10 @@
-const { getOneUser, getAllUsers, postUser, postIndividual } = require("../models/user.model");
+const {
+  getOneUser,
+  getAllUsers,
+  postUser,
+  postIndividual,
+  postCompany,
+} = require("../models/user.model");
 
 const getAllUser = async (req, res) => {
   try {
@@ -18,16 +24,32 @@ const getUserById = async (req, res) => {
   }
 };
 
-const createUser = async (req, res) => {
-    console.log(req.body)
-  const { email, description, hashedPassword,firstname, lastname,licence } = req.body;
+const createIndividual = async (req, res) => {
+  const { email, description, hashedPassword, firstname, lastname, licence } =
+    req.body;
   try {
     const userId = await postUser(email, description, hashedPassword);
-    const individualId= await postIndividual(firstname,lastname,licence,userId)
-    res.json(individualId)
-
+    const individualId = await postIndividual(
+      firstname,
+      lastname,
+      licence,
+      userId
+    );
+    res.json(individualId);
   } catch (err) {
-    console.error(err)
+    console.error(err);
+    res.status(405).send("Failed to create user");
+  }
+};
+
+const createCompany = async (req, res) => {
+  const { email, name, hashedPassword, description } = req.body;
+  try {
+    const userId = await postUser(email, description, hashedPassword);
+    const individualId = await postCompany(name, userId);
+    res.json(individualId);
+  } catch (err) {
+    console.error(err);
     res.status(405).send("Failed to create user");
   }
 };
@@ -35,5 +57,6 @@ const createUser = async (req, res) => {
 module.exports = {
   getAllUser,
   getUserById,
-  createUser,
+  createIndividual,
+  createCompany,
 };

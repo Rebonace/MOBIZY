@@ -26,7 +26,7 @@ const login = async (req, res) => {
       res.sendStatus(401);
     }
   } catch (err) {
-    console.error(err)
+    console.error(err);
     res.sendStatus(403);
   }
 };

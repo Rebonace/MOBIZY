@@ -1,4 +1,3 @@
-const jwt = require("jsonwebtoken");
 const argon2 = require("argon2");
 require("dotenv").config();
 
@@ -23,8 +22,5 @@ const hashPassword = async (req, res, next) => {
 };
 
 module.exports = {
-    hashPassword,
-    // verifyToken,
-    // verifyAdmin,
-  };
-  
+  hashPassword,
+};

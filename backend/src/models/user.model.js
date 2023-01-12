@@ -12,8 +12,7 @@ const database = require("./db");
 // }
 
 async function getUserByEmail(email) {
-  const sql =
-    "select email, hashed_password from user where email = ?";
+  const sql = "select email, hashed_password from user where email = ?";
   const sqlParams = [email];
 
   const [userInfo] = await database.query(sql, sqlParams);
@@ -36,31 +35,42 @@ async function getAllUsers() {
 }
 
 async function postUser(email, description, hashedPassword) {
-    const sql =
-      "INSERT INTO user(email, description, hashed_password) VALUES (?, ?, ?)";
-    const sqlParams = [email, description, hashedPassword];
-    const [result] = await database.query(sql, sqlParams);
-    if (result.affectedRows) {
-      return result.insertId;
-    }
-    throw new Error();
+  const sql =
+    "INSERT INTO user(email, description, hashed_password) VALUES (?, ?, ?)";
+  const sqlParams = [email, description, hashedPassword];
+  const [result] = await database.query(sql, sqlParams);
+  if (result.affectedRows) {
+    return result.insertId;
   }
+  throw new Error();
+}
 
-  async function postIndividual(firstname, lastname, licence, userId) {
-    const sql =
-      "INSERT INTO individual(firstname, lastname, licence, user_id) VALUES (?, ?, ?, ?)";
-    const sqlParams = [firstname, lastname, licence, userId];
-    const [result] = await database.query(sql, sqlParams);
-    if (result.affectedRows) {
-      return result.insertId;
-    }
-    throw new Error();
+async function postIndividual(firstname, lastname, licence, userId) {
+  const sql =
+    "INSERT INTO individual(firstname, lastname, licence, user_id) VALUES (?, ?, ?, ?)";
+  const sqlParams = [firstname, lastname, licence, userId];
+  const [result] = await database.query(sql, sqlParams);
+  if (result.affectedRows) {
+    return result.insertId;
   }
+  throw new Error();
+}
+
+async function postCompany(name, userId) {
+  const sql = "INSERT INTO company(name, user_id) VALUES (?, ?)";
+  const sqlParams = [name, userId];
+  const [result] = await database.query(sql, sqlParams);
+  if (result.affectedRows) {
+    return result.insertId;
+  }
+  throw new Error();
+}
 
 module.exports = {
-//   getOneUser,
+  //   getOneUser,
   getAllUsers,
   postUser,
   getUserByEmail,
-  postIndividual
+  postIndividual,
+  postCompany,
 };

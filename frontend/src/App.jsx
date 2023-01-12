@@ -1,12 +1,11 @@
-import Home from "./pages/Home";
+import LogIn from "./pages/LogIn";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <LogIn />
     </div>
   );
 }
