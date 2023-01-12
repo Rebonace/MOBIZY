@@ -1,13 +1,28 @@
-import Home from "./pages/Home";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
+import Search from "@pages/Search";
+import Register from "@pages/Register";
+import Login from "@pages/Login";
+import Account from "@pages/Account";
+import Cart from "@pages/Cart";
+import Admin from "@pages/Admin";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </Router>
   );
 }
 
