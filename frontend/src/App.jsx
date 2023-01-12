@@ -2,13 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import Search from "@pages/Search";
-import Register from "@pages/Register";
-import Account from "@pages/Account";
-import Cart from "@pages/Cart";
-import Admin from "@pages/Admin";
-import LogIn from "./pages/LogIn";
+import Search from "./pages/Search";
+import Register from "./pages/Register";
+import Account from "./pages/Account";
+import Cart from "./pages/Cart";
+import Admin from "./pages/Admin";
+import LogIn from "./pages/Login";
 import Home from "./pages/home/Home";
+import Calendar from "./components/Calendar";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/calendar/:vehicleId" element={<Calendar />} />
       </Routes>
     </Router>
   );
