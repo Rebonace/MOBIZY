@@ -100,6 +100,6 @@ INSERT INTO availibility (start_date_1, end_date_1, start_date_2, end_date_2, ve
 VALUES (NOW(), NEW.start_date, NEW.end_date, NOW() + INTERVAL 90 DAY, NEW.vehicle_id);
 
 INSERT INTO reservation (start_date, end_date, user_id, vehicle_id) 
-VALUES (NOW()+ INTERVAL 1 DAY, NOW()+ INTERVAL 3 DAY, 1, 1), 
+VALUES 
 (NOW()+ INTERVAL 2 DAY, NOW()+ INTERVAL 16 DAY, 1, 2), 
 (NOW()+ INTERVAL 18 DAY, NOW()+ INTERVAL 20 DAY, 2, 1);

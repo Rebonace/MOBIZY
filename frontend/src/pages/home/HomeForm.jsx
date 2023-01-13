@@ -1,3 +1,7 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -30,13 +34,13 @@ export default function HomeForm() {
 
   const getText = (v) => `${value}€`;
 
-  async function handleSubmit() {
+  function handleSubmit() {
     const data = JSON.stringify({
       isRamp: checkedRamp,
       isSonar: checkedSonar,
       isSphere: checkedSphere,
       dailyPrice: value,
-      location: location,
+      location,
       dateReservationStart: startDate,
       dateReservationEnd: endDate,
     });
@@ -50,7 +54,7 @@ export default function HomeForm() {
       data,
     };
 
-    await axios(config)
+    axios(config)
       .then(function (response) {
         console.log(response);
         window.localStorage.setItem("filter", JSON.stringify(response.data));
@@ -133,7 +137,6 @@ export default function HomeForm() {
           valueLabelDisplay="auto"
           value={value}
           step={10}
-          marks
           min={0}
           max={500}
           onChange={changeValue}
@@ -152,7 +155,7 @@ export default function HomeForm() {
         />
         <DatePicker
           style={{ width: "100%" }}
-          selectsRange={true}
+          selectsRange
           startDate={startDate}
           endDate={endDate}
           onChange={(e) => {

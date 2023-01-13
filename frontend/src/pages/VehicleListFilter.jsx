@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import VehicleCard from "../components/VehicleCard";
@@ -12,6 +13,7 @@ function VehicleListFilter() {
       {dataJSON ? (
         dataJSON.map((elt) => (
           <VehicleCard
+            vehicleId={elt.id}
             brand={elt.brand}
             model={elt.model}
             description={elt.description}

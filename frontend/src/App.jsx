@@ -8,7 +8,7 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import Admin from "./pages/Admin";
 import Header from "./components/Header";
-import Login from "./pages/Login";
+import Login from "./pages/LogIn";
 import Home from "./pages/home/Home";
 import VehicleListFilter from "./pages/VehicleListFilter";
 import VehicleList from "./pages/VehicleList";
@@ -32,6 +32,10 @@ function App() {
         <Route path="/vehicles/:vehicleId" element={<VehicleDetails />} />
         <Route
           path="/vehicles/:vehicleId/reserved"
+          element={<VehicleReserved />}
+        />
+        <Route
+          path="vehicles/filter/reserved/:vehicleId"
           element={<VehicleReserved />}
         />
       </Routes>

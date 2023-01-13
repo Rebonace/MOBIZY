@@ -8,7 +8,7 @@ function Calendar() {
   const [startDate, endDate] = dateRange;
   return (
     <DatePicker
-      selectsRange={true}
+      selectsRange
       startDate={startDate}
       endDate={endDate}
       onChange={(update) => {

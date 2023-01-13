@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 
 function VehicleCard({
+  vehicleId,
   brand,
   model,
   description,
@@ -58,7 +59,7 @@ function VehicleCard({
           <p>{isSonar}</p>
           <p>{isSphere}</p>
         </div>
-        <Link to="reserved">Reserved</Link>
+        <Link to={`reserved/${vehicleId}`}>Booked</Link>
       </div>
     </div>
   );

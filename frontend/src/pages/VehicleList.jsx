@@ -1,7 +1,9 @@
+/* eslint-disable func-names */
+/* eslint-disable no-restricted-syntax */
 import React, { useState } from "react";
 import axios from "axios";
-import VehicleCard from "../components/VehicleCard";
 import { Link } from "react-router-dom";
+import VehicleCard from "../components/VehicleCard";
 
 function VehicleList() {
   const [vehicles, setVehicles] = useState();

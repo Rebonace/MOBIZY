@@ -1,7 +1,9 @@
+/* eslint-disable func-names */
+/* eslint-disable no-restricted-syntax */
 import React, { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import VehicleCard from "../components/VehicleCard";
-import { Link, useParams } from "react-router-dom";
 
 export default function VehicleDetails() {
   const [vehicle, setVehicle] = useState([]);
