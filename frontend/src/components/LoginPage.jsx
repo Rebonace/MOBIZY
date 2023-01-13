@@ -49,27 +49,5 @@ export default function LogingPage() {
         </Button>
       </form>
     </div>
-    // onChange={(e) => handleChange(e)}
-    //     type="email"
-    //     name="email"
-    //     placeholder="Email"
-    //   />
-
-    //   <input
-    //     onChange={(e) => handleChange(e)}
-    //     type="password"
-    //     name="password"
-    //     placeholder="Password"
-    //   />
-    //   <button
-    //    onClick={(event) => {
-    //  event.preventDefault();
-    // handleSubmit();
-    // }}
-    //     type="submit"
-    //   >
-    //     Login
-    //   </button>
-    //   <span>Forgot Password ?</span> */}
   );
 }

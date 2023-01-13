@@ -5,7 +5,7 @@ const reservationController = require("../controllers/reservation.controller");
 const vehicleRouter = new Router();
 
 vehicleRouter.get("/", vehicleController.list);
-vehicleRouter.get("/filter", vehicleController.listWithFilters);
+vehicleRouter.post("/filter", vehicleController.listWithFilters);
 vehicleRouter.get("/:vehicleId", vehicleController.get);
 vehicleRouter.delete("/:vehicleId/delete", vehicleController.deleteOne);
 vehicleRouter.post("/:vehicleId/reserved", reservationController.create);

@@ -10,6 +10,10 @@ import Admin from "./pages/Admin";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import Home from "./pages/home/Home";
+import VehicleListFilter from "./pages/VehicleListFilter";
+import VehicleList from "./pages/VehicleList";
+import VehicleDetails from "./pages/VehicleDetails";
+import VehicleReserved from "./pages/VehicleReserved";
 
 function App() {
   return (
@@ -23,6 +27,13 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/vehicles/filter" element={<VehicleListFilter />} />
+        <Route path="/vehicles" element={<VehicleList />} />
+        <Route path="/vehicles/:vehicleId" element={<VehicleDetails />} />
+        <Route
+          path="/vehicles/:vehicleId/reserved"
+          element={<VehicleReserved />}
+        />
       </Routes>
     </Router>
   );

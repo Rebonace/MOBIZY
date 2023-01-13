@@ -6,11 +6,13 @@
 .home-title-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 5px;
 }
 .home-title {
   font-size: 2rem;
+  text-align: center;
 }
 .home-title-logo {
   width: 30px;
